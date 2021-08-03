@@ -1,5 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from 'components/App'
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import reducers from "reducers";
 
-ReactDOM.render(<App />, document.getElementById('root'))
+import App from "components/App";
+
+ReactDOM.render(
+	<Provider store={createStore(reducers, {})}>
+		<App />
+	</Provider>,
+	document.getElementById("root")
+);
+
+/*
+createStore(reducers, {}): {} is the initial state for the redux store
+*/
