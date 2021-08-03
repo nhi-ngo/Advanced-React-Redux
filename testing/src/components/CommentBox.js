@@ -1,34 +1,36 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class CommentBox extends Component {
-  state = { comment: '' }
+	state = { comment: "" };
 
-  handleChange = (e) => {
-    this.setState({ comment: e.target.value })
-  }
+	handleChange = (e) => {
+		this.setState({ comment: e.target.value });
+	};
 
-  handleSubmit = (e) => {
-    e.preventDefault()
-    this.setState({ comment: '' })
-  }
+	handleSubmit = (e) => {
+		e.preventDefault();
 
-  render() {
-    return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <h2>Add a comment</h2>
-          <textarea
-            placeholder="Write here..."
-            value={this.state.comment}
-            onChange={this.handleChange}
-          />
-          <div>
-            <button>Submit</button>
-          </div>
-        </form>
-      </div>
-    )
-  }
+		//TODO: call an action creator and save the comment
+		this.setState({ comment: "" });
+	};
+
+	render() {
+		return (
+			<div>
+				<form onSubmit={this.handleSubmit}>
+					<h2>Add a comment</h2>
+					<textarea
+						placeholder="Write here..."
+						value={this.state.comment}
+						onChange={this.handleChange}
+					/>
+					<div>
+						<button>Submit</button>
+					</div>
+				</form>
+			</div>
+		);
+	}
 }
 
-export default CommentBox
+export default CommentBox;
