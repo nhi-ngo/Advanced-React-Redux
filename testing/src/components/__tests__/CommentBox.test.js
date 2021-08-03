@@ -1,11 +1,16 @@
 import React from "react";
 import { mount } from "enzyme";
 import CommentBox from "components/CommentBox";
+import Root from "Root";
 
 let wrapper;
 
 beforeEach(() => {
-	wrapper = mount(<CommentBox />);
+	wrapper = mount(
+		<Root>
+			<CommentBox />
+		</Root>
+	);
 });
 
 /* full rendering actually mounts the component in the DOM, which means that tests can affect each other if they are all using the same DOM
