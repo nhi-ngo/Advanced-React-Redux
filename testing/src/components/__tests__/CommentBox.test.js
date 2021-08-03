@@ -8,6 +8,17 @@ beforeEach(() => {
 	wrapper = mount(<CommentBox />);
 });
 
+/* full rendering actually mounts the component in the DOM, which means that tests can affect each other if they are all using the same DOM
+	=> use .unmount() as cleanup
+*/
+afterEach(() => {
+	wrapper.unmount();
+});
+
+it("has a text area and a button", () => {
+	expect(wrapper.find("textarea").length).toEqual(1);
+	expect(wrapper.find("button").length).toEqual(1);
+});
 
 describe("the text area", () => {
 	beforeEach(() => {
