@@ -34,7 +34,7 @@ class CommentBox extends Component {
 					</div>
 				</form>
 				<br />
-				<button onClick={this.handleFetchComments}>Fetch Comments</button>
+				<button className="fetch-comments-btn" onClick={this.handleFetchComments}>Fetch Comments</button>
 			</div>
 		);
 	}
