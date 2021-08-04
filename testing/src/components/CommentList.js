@@ -1,9 +1,21 @@
-import React from 'react'
+import React from "react";
+import { useSelector } from "react-redux";
 
-export default function CommentList() {
-  return (
-    <div>
-      <h1>List</h1>
-    </div>
-  )
+function CommentList() {
+	const comments = useSelector((state) => state.comments);
+
+	const renderComments = () => {
+		return comments.map((comment) => {
+			return <li key={comment}>{comment}</li>;
+		});
+	};
+
+	return (
+		<div>
+			<h1>List</h1>
+			<ul>{renderComments()}</ul>
+		</div>
+	);
 }
+
+export default CommentList;
