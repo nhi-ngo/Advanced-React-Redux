@@ -10,6 +10,3 @@ ReactDOM.render(
 	document.getElementById("root")
 );
 
-/*
-createStore(reducers, {}): {} is the initial state for the redux store
-*/

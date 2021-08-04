@@ -15,6 +15,10 @@ class CommentBox extends Component {
 		this.setState({ comment: "" });
 	};
 
+	handleFetchComments = () => {
+		this.props.fetchComments();
+	};
+
 	render() {
 		return (
 			<div>
@@ -29,6 +33,8 @@ class CommentBox extends Component {
 						<button>Submit</button>
 					</div>
 				</form>
+				<br />
+				<button onClick={this.handleFetchComments}>Fetch Comments</button>
 			</div>
 		);
 	}
