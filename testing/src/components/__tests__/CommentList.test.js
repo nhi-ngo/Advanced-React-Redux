@@ -21,6 +21,13 @@ afterEach(() => {
 	wrapper.unmount();
 });
 
-it("has one <li> element per comment", () => {
-	console.log(wrapper.find("li").length);
+it("creates one <li> element per comment", () => {
+	expect(wrapper.find("li").length).toEqual(2); // should be 2 since there are 2 comments in the initial state
 });
+
+it("shows text for each comment", () => {
+	expect(wrapper.render().text()).toContain('Comment 1');
+	expect(wrapper.render().text()).toContain('Comment 2');
+	console.log(wrapper.render().text());
+});
+

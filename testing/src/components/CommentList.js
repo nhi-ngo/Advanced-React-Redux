@@ -12,7 +12,6 @@ function CommentList() {
 
 	return (
 		<div>
-			<h1>List</h1>
 			<ul>{renderComments()}</ul>
 		</div>
 	);
