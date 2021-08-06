@@ -30,9 +30,11 @@ it("can fetch a list of comments and display them", (done) => {
 	wrapper.find(".fetch-comments-btn").simulate("click");
 
 	// Pause a litle then expect to find a list of comments
-	setTimeout(() => {
+	moxios(() => {
+		wrapper.update();
 		expect(wrapper.find("li").length).toEqual(2);
 		// Until done() is invoked, the test is considered complete
-    done();
+		done();
+		wrapper.unmount();
 	}, 100);
 });
