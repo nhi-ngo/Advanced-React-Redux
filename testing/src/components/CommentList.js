@@ -1,5 +1,5 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 function CommentList() {
 	const comments = useSelector((state) => state.comments);
@@ -12,6 +12,7 @@ function CommentList() {
 
 	return (
 		<div>
+			<h2>Comment List</h2>
 			<ul>{renderComments()}</ul>
 		</div>
 	);

@@ -24,17 +24,17 @@ class CommentBox extends Component {
 			<div>
 				<form onSubmit={this.handleSubmit}>
 					<h2>Add a comment</h2>
-					<textarea
-						placeholder="Write here..."
-						value={this.state.comment}
-						onChange={this.handleChange}
-					/>
-					<div>
-						<button>Submit</button>
+					<div style={{display: 'flex', alignItems: 'flex-end'}}>
+						<textarea placeholder='Write here...' value={this.state.comment} onChange={this.handleChange} />
+						<div style={{marginLeft: 10}}>
+							<button>Submit</button>
+						</div>
 					</div>
 				</form>
 				<br />
-				<button className="fetch-comments-btn" onClick={this.handleFetchComments}>Fetch Comments</button>
+				<button className='fetch-comments-btn' onClick={this.handleFetchComments}>
+					Fetch Comments
+				</button>
 			</div>
 		);
 	}
